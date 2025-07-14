@@ -3,8 +3,8 @@ import {
   getAllPlaylists,
   getPlaylistById,
   getSongsByPlaylistId,
-  createPlaylist, 
-  deletePlaylist
+  createPlaylist,
+  deletePlaylist,
 } from "../controllers/playlist.controller.js";
 
 const router = express.Router();
