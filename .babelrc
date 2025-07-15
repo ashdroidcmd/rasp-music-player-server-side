@@ -1,0 +1,10 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": {
+        "node": "current"  // or "18"
+      },
+      "modules": false    // keep ES modules (import/export)
+    }]
+  ]
+}
