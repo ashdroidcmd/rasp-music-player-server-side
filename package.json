@@ -8,7 +8,7 @@
     "start": "node src/index.js",
     "prisma": "prisma",
     "build": "npx babel src --out-dir dist",
-    "prod": "node dist/index.js"
+    "prod": "node dist/index.js && npx prisma generate"
   },
   "keywords": [],
   "author": "",

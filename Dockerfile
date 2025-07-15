@@ -13,6 +13,9 @@ RUN npm install
 # Copy the rest of the app source
 COPY . .
 
+# Generate the Prisma Client
+RUN npx prisma generate
+
 # Build the app using Babel
 RUN npm run build
 

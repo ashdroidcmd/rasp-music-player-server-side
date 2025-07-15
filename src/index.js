@@ -3,15 +3,23 @@ import dotenv from "dotenv";
 import cors from "cors";
 import songRoutes from "./routes/song.routes.js";
 import playlistRoutes from "./routes/playlist.routes.js";
+import fs from "fs";
 
-// Load environment variables
-dotenv.config();
+const envFile = process.env.NODE_ENV === "production" ? ".env.production" : ".env";
+if (fs.existsSync(envFile)) {
+  dotenv.config({ path: envFile });
+  console.log(`Loaded ${envFile}`);
+} else {
+  console.warn(`${envFile} not found, loading default`);
+  dotenv.config();
+}
+
 const app = express();
 
 // Cors
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://ace-potify.vercel.app"],
+    origin: ["http://localhost:5173", "https://ace-potify.vercel.app", "http://localhost:5000"],
     credentials: true,
   })
 );
